@@ -1,0 +1,29 @@
+select e.ssn from employee e, project p, assigned_to2 a where p.projectarea='database' and p.projectno=a.projectno and a.usn=e.ssn;
+
+select count(ssn) from employee group by(deptno);
+ 
+update assigned_to 2 set projectno=20 where usn=1;
+ 
+select s2.pno from supplier2 s1,supply3 s2 where s1.sname='Ram' and s1.sno=s2.sno;
+ 
+select s1.sname from part p, supplier2 s1,supply3 s2 where p.pname='bolt' and p.pno=s2.pno and s2.sno=s1.sno;
+
+delete from part2 where color='Red';
+
+select b.bid from boat b,sailor1 s,reserves r where s.sname='Ram' and s.sid=r.sid and r.bid=b.bid;
+
+select b.bid from boat b,reserves r where r.bid=b.bid;
+
+select count(bid) from reserves group by(sid);
+
+select w.wname from part p, shipment s, warehouse w where p.color='red' and p.pno=s.pno and s.wno=w.wno;
+
+select p.pno from part p ,shipment s where s.pno=p.pno;
+
+select count(Pno) from shipment group by(wno);
+
+ select name from book b, student s,borrow2 b2 where b.ISBN=123 and b.ISBN=b2.ISBN and b2.USN=s.USN
+ 
+ select name from book b, student s,borrow2 b2 where b.title='database' and b.ISBN=b2.ISBN and b2.USN=s.USN;
+ 
+ select count(ISBN) from borrow2 groupby(USN);
